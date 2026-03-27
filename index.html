@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fille.ai — L'intelligence artificielle au féminin</title>
-  <meta name="description" content="Fille.ai — La première plateforme d'intelligence artificielle pensée au féminin." />
+  <title>fille.ai — Le domaine de vos désirs</title>
+  <meta name="description" content="fille.ai — Le domaine parfait pour une IA compagne, une expérience immersive, une plateforme de fantasmes." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
@@ -14,19 +14,17 @@
       --rose:   #f472b6;
       --violet: #a855f7;
       --dark:   #0a0a0f;
-      --glass:  rgba(255,255,255,0.04);
       --border: rgba(255,255,255,0.08);
       --text:   #f1f0f5;
       --muted:  #9490a8;
     }
 
-    html { scroll-behavior: smooth; }
-
-    body {
+    html, body {
+      height: 100%;
+      overflow: hidden;
       background: var(--dark);
       color: var(--text);
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
     }
 
     body::before {
@@ -45,7 +43,6 @@
     .blob-2 { width: 500px; height: 500px; background: var(--rose); bottom: -100px; right: -100px; animation: drift 22s ease-in-out infinite alternate-reverse; }
     @keyframes drift { from{transform:translate(0,0)} to{transform:translate(40px,30px)} }
 
-    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 24px 56px;
@@ -58,34 +55,29 @@
       background: linear-gradient(135deg, #fff 0%, var(--rose) 60%, var(--violet) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .nav-badge {
-      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--rose);
-      border: 1px solid rgba(244,114,182,0.3);
-      padding: 6px 14px; border-radius: 100px;
-      background: rgba(244,114,182,0.05);
+    .nav-email {
+      font-size: 0.78rem; color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
     }
+    .nav-email:hover { color: var(--rose); }
 
-    /* HERO */
     .hero {
       position: relative; z-index: 1;
-      min-height: 100vh;
+      height: 100vh;
       display: grid; grid-template-columns: 1fr 1fr;
       align-items: center;
-      padding: 120px 56px 80px;
+      padding: 100px 56px 48px;
       gap: 56px;
     }
 
-    .hero-content {}
-
     .pill {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
       color: var(--violet);
       background: rgba(168,85,247,0.08);
       border: 1px solid rgba(168,85,247,0.2);
-      padding: 8px 18px; border-radius: 100px;
-      margin-bottom: 32px;
+      padding: 7px 16px; border-radius: 100px;
+      margin-bottom: 20px;
     }
     .pill::before {
       content: ''; width: 6px; height: 6px;
@@ -96,42 +88,40 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 5vw, 4.4rem);
-      font-weight: 700; line-height: 1.1;
+      font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+      font-weight: 700; line-height: 1.0;
       letter-spacing: -0.02em;
-      margin-bottom: 24px;
+      margin-bottom: 10px;
     }
-    h1 em { font-style: italic; color: var(--rose); }
-    h1 span {
-      background: linear-gradient(135deg, var(--rose), var(--violet));
+    h1 .domain {
+      background: linear-gradient(135deg, #fff 0%, var(--rose) 55%, var(--violet) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      display: block;
+    }
+    h1 .tagline {
+      display: block;
+      font-style: italic;
+      font-size: 0.44em; font-weight: 400;
+      color: var(--rose); -webkit-text-fill-color: var(--rose);
+      margin-top: 10px;
     }
 
-    .hero-desc {
-      font-size: 1.05rem; line-height: 1.75;
-      color: var(--muted); margin-bottom: 20px; max-width: 460px;
-    }
-
-    .domain-line {
-      display: flex; align-items: center; gap: 12px;
-      margin-bottom: 40px;
-      font-size: 0.8rem; color: var(--muted);
-    }
     .domain-badge {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
       color: #10b981;
       background: rgba(16,185,129,0.08);
       border: 1px solid rgba(16,185,129,0.2);
       padding: 4px 12px; border-radius: 100px;
+      margin: 14px 0 18px;
     }
-    .domain-badge-no {
-      font-size: 0.7rem; font-weight: 600;
-      color: var(--muted);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      padding: 4px 12px; border-radius: 100px;
-      text-decoration: line-through;
+
+    .hero-desc {
+      font-size: 0.95rem; line-height: 1.75;
+      color: var(--muted); margin-bottom: 28px; max-width: 440px;
     }
+
+    .cta-group { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
 
     .btn-primary {
       display: inline-flex; align-items: center; gap: 10px;
@@ -144,85 +134,38 @@
     }
     .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
 
-    /* HERO IMAGES */
+    .contact-hint {
+      font-size: 0.73rem; color: var(--muted);
+    }
+    .contact-hint a {
+      color: var(--rose); text-decoration: none; font-weight: 500;
+    }
+    .contact-hint a:hover { text-decoration: underline; }
+
     .hero-images {
       position: relative;
       display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-      align-items: end;
+      height: calc(100vh - 148px);
     }
     .img-wrap {
       border-radius: 18px; overflow: hidden;
       box-shadow: 0 24px 60px rgba(0,0,0,0.6);
       border: 1px solid var(--border);
-      position: relative;
+      position: relative; height: 100%;
     }
-    .img-wrap img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-    }
-    .img-wrap-main { aspect-ratio: 2/3; }
-    .img-wrap-side { aspect-ratio: 3/5; margin-bottom: 32px; }
+    .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .img-wrap-side { margin-top: 60px; height: calc(100% - 60px); }
     .img-wrap::after {
       content: '';
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(10,10,15,0.5) 0%, transparent 60%);
     }
 
-    /* CONTACT */
-    .contact-section {
-      position: relative; z-index: 1;
-      padding: 80px 56px 100px;
-    }
-    .contact-inner {
-      background: var(--glass);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 64px 72px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-    }
-    .contact-label {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--violet); margin-bottom: 16px;
-    }
-    .contact-inner h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 2.5vw, 2.5rem); font-weight: 700;
-      line-height: 1.2; margin-bottom: 16px;
-    }
-    .contact-inner h2 em { color: var(--rose); font-style: italic; }
-    .contact-inner p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
-    .contact-right { display: flex; flex-direction: column; gap: 20px; }
-    .contact-email-wrap {
-      background: rgba(168,85,247,0.05);
-      border: 1px solid rgba(168,85,247,0.15);
-      border-radius: 16px; padding: 28px 32px;
-    }
-    .contact-hint { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
-    .contact-email {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem; font-weight: 700;
-      background: linear-gradient(135deg, var(--rose), var(--violet));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      display: block; text-decoration: none;
-    }
-    .contact-note { font-size: 0.75rem; color: var(--muted); margin-top: 10px; }
-
-    /* FOOTER */
-    footer {
-      position: relative; z-index: 1;
-      padding: 28px 56px;
-      border-top: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      color: var(--muted); font-size: 0.75rem;
-    }
-
-    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding: 100px 28px 60px; gap: 40px; }
-      .hero-images { order: -1; grid-template-columns: 1fr 1fr; }
-      .contact-inner { grid-template-columns: 1fr; gap: 40px; padding: 40px 28px; }
+      html, body { overflow: auto; }
+      .hero { height: auto; min-height: 100vh; grid-template-columns: 1fr; padding: 100px 28px 60px; gap: 40px; }
+      .hero-images { height: 50vh; grid-template-columns: 1fr 1fr; }
       nav { padding: 20px 24px; }
-      .contact-section { padding: 60px 24px; }
-      footer { padding: 24px 28px; flex-direction: column; gap: 10px; text-align: center; }
     }
     @media (max-width: 540px) {
       .hero-images { grid-template-columns: 1fr; }
@@ -234,27 +177,28 @@
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
 
-  <!-- NAV -->
   <nav>
     <div class="logo">fille.ai</div>
-    <div class="nav-badge">Bientôt disponible</div>
+    <a href="mailto:domain@fille.ai" class="nav-email">domain@fille.ai</a>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="pill">Intelligence artificielle · 2026</div>
-      <h1>L'IA<br/><em>pensée</em><br/><span>au féminin.</span></h1>
+      <div class="pill">Domaine disponible</div>
+      <h1>
+        <span class="domain">fille.ai</span>
+        <span class="tagline">L'IA qui exauce vos désirs.</span>
+      </h1>
+      <span class="domain-badge">✓ fille.ai</span>
       <p class="hero-desc">
-        Une nouvelle génération de plateforme d'intelligence artificielle,
-        conçue par et pour les femmes. Le domaine parfait pour une vision sans compromis.
+        Le domaine parfait pour une compagne IA, une expérience immersive
+        ou une plateforme pensée pour les fantasmes des hommes.
+        Évocateur, rare, mémorable — <strong style="color:var(--text)">fille.ai</strong> s'impose.
       </p>
-      <div class="domain-line">
-        <span class="domain-badge">✓ fille.ai</span>
-        <span class="domain-badge-no">fille.ia</span>
-        <span style="font-size:0.72rem">· .ia n'existe pas comme TLD</span>
+      <div class="cta-group">
+        <a href="mailto:domain@fille.ai" class="btn-primary">✦ Prendre contact</a>
+        <div class="contact-hint">Ou écrivez directement à <a href="mailto:domain@fille.ai">domain@fille.ai</a> · Réponse sous 24h</div>
       </div>
-      <a href="mailto:domain@fille.ai" class="btn-primary">✦ Prendre contact</a>
     </div>
 
     <div class="hero-images">
@@ -266,37 +210,5 @@
       </div>
     </div>
   </section>
-
-  <!-- CONTACT -->
-  <section class="contact-section">
-    <div class="contact-inner">
-      <div>
-        <div class="contact-label">Prendre contact</div>
-        <h2>Une idée ?<br/>Une <em>collaboration</em> ?</h2>
-        <p>
-          Pour toute demande de partenariat, d'acquisition ou d'information
-          sur le projet fille.ai, notre équipe est disponible.
-          Nous sommes ouverts aux discussions sérieuses.
-        </p>
-      </div>
-      <div class="contact-right">
-        <div class="contact-email-wrap">
-          <div class="contact-hint">Contactez l'équipe</div>
-          <a href="mailto:domain@fille.ai" class="contact-email">domain@fille.ai</a>
-          <div class="contact-note">Réponse sous 24h · Équipe disponible en 🇫🇷 &amp; 🇬🇧</div>
-        </div>
-        <a href="mailto:domain@fille.ai" class="btn-primary" style="justify-content:center">
-          Envoyer un message →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="logo" style="font-size:1.1rem">fille.ai</div>
-    <div>L'intelligence artificielle au féminin</div>
-    <div>© 2026 fille.ai</div>
-  </footer>
 </body>
 </html>
