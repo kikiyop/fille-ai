@@ -13,10 +13,10 @@
     :root {
       --rose:   #f472b6;
       --violet: #a855f7;
-      --dark:   #0a0a0f;
-      --border: rgba(255,255,255,0.08);
+      --dark:   #17102a;
+      --border: rgba(255,255,255,0.10);
       --text:   #f1f0f5;
-      --muted:  #9490a8;
+      --muted:  #a89fbf;
     }
 
     html, body {
@@ -30,13 +30,13 @@
     body::before {
       content: '';
       position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
       pointer-events: none; z-index: 0;
     }
 
     .blob {
       position: fixed; border-radius: 50%;
-      filter: blur(120px); opacity: 0.15;
+      filter: blur(110px); opacity: 0.28;
       pointer-events: none; z-index: 0;
     }
     .blob-1 { width: 700px; height: 700px; background: var(--violet); top: -200px; left: -150px; animation: drift 18s ease-in-out infinite alternate; }
@@ -47,7 +47,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 24px 56px;
       display: flex; align-items: center; justify-content: space-between;
-      background: linear-gradient(to bottom, rgba(10,10,15,0.95), transparent);
+      background: linear-gradient(to bottom, rgba(23,16,42,0.97), transparent);
     }
     .logo {
       font-family: 'Playfair Display', serif;
@@ -74,8 +74,8 @@
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
       color: var(--violet);
-      background: rgba(168,85,247,0.08);
-      border: 1px solid rgba(168,85,247,0.2);
+      background: rgba(168,85,247,0.12);
+      border: 1px solid rgba(168,85,247,0.3);
       padding: 7px 16px; border-radius: 100px;
       margin-bottom: 20px;
     }
@@ -110,14 +110,14 @@
       display: inline-block;
       font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
       color: #10b981;
-      background: rgba(16,185,129,0.08);
-      border: 1px solid rgba(16,185,129,0.2);
+      background: rgba(16,185,129,0.10);
+      border: 1px solid rgba(16,185,129,0.25);
       padding: 4px 12px; border-radius: 100px;
       margin: 14px 0 18px;
     }
 
     .hero-desc {
-      font-size: 0.95rem; line-height: 1.75;
+      font-size: 0.95rem; line-height: 1.78;
       color: var(--muted); margin-bottom: 28px; max-width: 440px;
     }
 
@@ -130,16 +130,12 @@
       padding: 15px 32px; border-radius: 12px;
       border: none; cursor: pointer; text-decoration: none;
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 8px 32px rgba(168,85,247,0.3);
+      box-shadow: 0 8px 36px rgba(168,85,247,0.4);
     }
     .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
 
-    .contact-hint {
-      font-size: 0.73rem; color: var(--muted);
-    }
-    .contact-hint a {
-      color: var(--rose); text-decoration: none; font-weight: 500;
-    }
+    .contact-hint { font-size: 0.73rem; color: var(--muted); }
+    .contact-hint a { color: var(--rose); text-decoration: none; font-weight: 500; }
     .contact-hint a:hover { text-decoration: underline; }
 
     .hero-images {
@@ -149,7 +145,7 @@
     }
     .img-wrap {
       border-radius: 18px; overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
       border: 1px solid var(--border);
       position: relative; height: 100%;
     }
@@ -158,7 +154,7 @@
     .img-wrap::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,10,15,0.5) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(23,16,42,0.45) 0%, transparent 55%);
     }
 
     @media (max-width: 900px) {
@@ -187,17 +183,18 @@
       <div class="pill">Domaine disponible</div>
       <h1>
         <span class="domain">fille.ai</span>
-        <span class="tagline">L'IA qui exauce vos désirs.</span>
+        <span class="tagline">Elle fait tout ce que vous désirez.</span>
       </h1>
       <span class="domain-badge">✓ fille.ai</span>
       <p class="hero-desc">
-        Le domaine parfait pour une compagne IA, une expérience immersive
-        ou une plateforme pensée pour les fantasmes des hommes.
-        Évocateur, rare, mémorable — <strong style="color:var(--text)">fille.ai</strong> s'impose.
+        Votre compagne IA, sans limites. <strong style="color:var(--text)">fille.ai</strong>
+        est le domaine idéal pour une plateforme de fantasmes, une expérience
+        immersive ou une IA intime pensée pour les hommes.
+        Évocateur, rare, inoubliable.
       </p>
       <div class="cta-group">
         <a href="mailto:domain@fille.ai" class="btn-primary">✦ Prendre contact</a>
-        <div class="contact-hint">Ou écrivez directement à <a href="mailto:domain@fille.ai">domain@fille.ai</a> · Réponse sous 24h</div>
+        <div class="contact-hint">Ou écrivez à <a href="mailto:domain@fille.ai">domain@fille.ai</a> · Réponse sous 24h</div>
       </div>
     </div>
 
