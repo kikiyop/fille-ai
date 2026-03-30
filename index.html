@@ -151,7 +151,7 @@
 
     .hero-images {
       position: relative;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      display: grid; grid-template-columns: 1fr; gap: 12px;
       height: calc(100vh - 148px);
     }
     .img-wrap {
@@ -161,7 +161,7 @@
       position: relative; height: 100%;
     }
     .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .img-wrap-side { margin-top: 60px; height: calc(100% - 60px); }
+    .img-wrap-side { margin-top: 0; height: 100%; }
     .img-wrap::after {
       content: '';
       position: absolute; inset: 0;
@@ -208,11 +208,7 @@
       </form>
     </div>
 
-    <div class="hero-images">
-      <div class="img-wrap img-wrap-main">
-        <img src="img/hero.jpg" alt="fille.ai" loading="eager" />
-      </div>
-      <div class="img-wrap img-wrap-side">
+    <div class="hero-images">      <div class="img-wrap img-wrap-side">
         <img src="img/gallery1.jpg" alt="fille.ai" loading="eager" />
       </div>
     </div>
